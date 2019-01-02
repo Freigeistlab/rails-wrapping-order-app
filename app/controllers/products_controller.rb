@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @grouped_products = Product.all.includes(:product_group).order('product_groups.order')
   end
 
   # GET /products/1
