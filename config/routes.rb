@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :order_items
+  resources :orders
   resources :order_statuses
   resources :products
   resources :product_groups
