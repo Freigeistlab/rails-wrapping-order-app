@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
-
   <% @product_groups.each do |product_group| %>
     <ul>
       <li style="list-style: none;"><h3><%= product_group.name %></h3></li>
       <% product_group.products.each do |product| %>
         <li style="list-style: none;">
-          <h4><%= product.name %></h4>
-          <p><%= product.description %></p>
+          <%= render "products/product_row", product: product, order_item: @order_item %>
         </li>
       <% end %>
     </ul>

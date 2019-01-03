@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @grouped_products = Product.all.includes(:product_group).order('product_groups.order')
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/1
