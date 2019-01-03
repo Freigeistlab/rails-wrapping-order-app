@@ -1,13 +1,20 @@
-<div class="card">
-  <img class="card-img-top" src="https://via.placeholder.com/500" alt="Card image cap" style="height: 250px">
-  <div class="card-body">
-    <h5 class="card-title">
-      <%= link_to "#{current_order.order_items.size} Materialien ausgewählt ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>    
-    </h5>
-    <p class="card-text">
-      <% current_order.order_items.each do |oi| %>
-        <li style="list-style: none;"><%= oi.product.product_group.name %>: <%= oi.product.name %></li>
-      <% end %>
-    </p>
+<div class="sidebar-item">
+  <div class="make-me-sticky">
+    <div class="cart-text">
+
+      <div class="card">
+        <img class="card-img-top" src="https://via.placeholder.com/500" alt="Card image cap" style="height: 250px">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to "#{current_order.order_items.size} Materialien ausgewählt ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>    
+          </h5>
+          <p class="card-text">
+            <% current_order.order_items.each do |oi| %>
+              <li style="list-style: none;"><%= oi.product.product_group.name %>: <%= oi.product.name %></li>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -20,6 +20,7 @@
 </head>
 <body>
   <%= render 'layouts/top_navigation' %>
+  <% if controller.controller_name == "carts" || controller.controller_name == "pages" %>
   <article>
     <div class="container-fluid">
       <div class="row">
@@ -31,17 +32,22 @@
             <%= yield %>
           </div>
         </div>
+        
         <div class="col-5">
-
-          <div class="sidebar-item">
-            <div class="make-me-sticky">
-              <div class="cart-text"><%= render 'layouts/cart_text' %></div>
-            </div>
-          </div>
-          
+          <%= render 'layouts/cart_text' %>          
         </div>
+        
       </div>
     </div>
   </article>
+  <% else %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </body>
 </html>
