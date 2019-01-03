@@ -9,10 +9,12 @@
 <% end %>
 <% if @order_items.size == 0 %>
   <p class="text-center">
-    There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
+    Du hast noch keine Materialien ausgewählt. Bitte gehe <%= link_to "zurück in den Shop", root_path %> und wähle Verpackungsmaterialien aus.
   </p>
 <% else %>
+  <ul class="list-group">
   <% @order_items.each do |order_item| %>
-    <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
+    <li class="list-group-item"><%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %></li>
   <% end %>
+  </ul>
 <% end %>
