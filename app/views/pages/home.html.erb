@@ -1,15 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-  <% @product_groups.each do |product_group| %>
-    <ul class="list-group">
-      <li class="list-group-item">
-        <h3 class="text-center"><%= product_group.name %></h3>
-        
-          <li class="list-group-item">
-            <% product_group.products.each do |product| %>
-              <%= render "products/product_row", product: product, order_item: @order_item %>
-            <% end %>
-          </li>
-      </li>
-    </ul>
-  <% end %>
+<% @product_groups.each do |product_group| %>
+<ul class="list-group">
+  <li class="list-group-item">
+    <h3 class="text-center"><%= product_group.name %></h3>
+    
+      <div class="d-flex justify-content-around">
+        <% product_group.products.each do |product| %>
+          <%= render "products/product_row", product: product, order_item: @order_item %>
+        <% end %>
+      </div>
+  </li>
+</ul>
+<% end %>

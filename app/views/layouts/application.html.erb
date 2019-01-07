@@ -19,28 +19,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/top_navigation' %>
+
   <% if controller.controller_name == "carts" || controller.controller_name == "pages" %>
   <article>
     <div class="container-fluid">
-      <div class="row">
-        <%= render 'layouts/welcome' if current_page?(root_url) %>
-      </div>
+      <%= render 'layouts/welcome' if current_page?(root_url) %>
+      <%= render 'layouts/top_navigation' %>    
       <div class="row">
         <div class="col-7">
           <div class="content-section">
             <%= yield %>
           </div>
         </div>
-        
         <div class="col-5">
           <%= render 'layouts/cart_text' %>          
         </div>
-        
       </div>
     </div>
   </article>
   <% else %>
+    <%= render 'layouts/top_navigation' %>
     <div class="container">
       <div class="row">
         <div class="col-xs-6">
