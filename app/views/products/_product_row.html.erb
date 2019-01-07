@@ -1,5 +1,5 @@
 <div class="card" style="width: 15rem">
-  <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+  <%= image_tag(product.image, {:class => "card-img-top"}) if product.image.present? %>
   <div class="card-body">
     <h5 class="card-title"><%= product.name %></h5>
     <p class="card-text"><%= product.description %></p>

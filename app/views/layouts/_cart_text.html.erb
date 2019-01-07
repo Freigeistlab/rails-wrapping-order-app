@@ -3,7 +3,13 @@
     <div class="cart-text">
 
       <div class="card">
-        <img class="card-img-top" src="https://via.placeholder.com/500" alt="Card image cap" style="height: 250px">
+        
+        <div class="card">
+          <img class="card-img-top" src="http://placehold.jp/ffffff/ffffff/250x250.png" alt="Card image cap" style="width: 100%; height: 250px">
+          <% current_order.order_items.order(:product_group_id).each do |oi| %>
+             <%= image_tag(oi.product.image, {:style => "position: absolute; width: 100%; height: 250px"}) if oi.product.image.present? %>
+          <% end %>
+        </div>
         <div class="card-body">
           <h5 class="card-title">
             <%= link_to "#{current_order.order_items.size} Materialien ausgewählt ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>    
