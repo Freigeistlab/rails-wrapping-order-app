@@ -9,7 +9,7 @@ class OrderItemsController < ApplicationController
     end
     @order.order_status_id = 1
     @order.save
-    session[:order_id] = @order.id    
+    session[:order_id] = @order.id
   end
 
   def update
@@ -25,6 +25,7 @@ class OrderItemsController < ApplicationController
     @order_item.destroy
     @order_items = @order.order_items
   end
+  
 private
   def order_item_params
     params.require(:order_item).permit(:quantity, :product_id, :product_group_id)

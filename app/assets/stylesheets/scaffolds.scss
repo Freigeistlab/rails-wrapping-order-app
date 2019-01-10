@@ -1,36 +1,36 @@
-body {
-  background-color: #fff;
-  color: #444;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+// body {
+//   background-color: #fff;
+//   color: #444;
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px;
+// }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+// p, ol, ul, td {
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px;
+// }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
+// pre {
+//   background-color: #eee;
+//   padding: 10px;
+//   font-size: 11px;
+// }
 
-a {
-  color: #000;
-  font-weight: bolder;
+// a {
+//   color: #000;
+//   font-weight: bolder;
 
-  &:visited {
-    color: #666;
-  }
+//   &:visited {
+//     color: #666;
+//   }
 
-  &:hover {
-    color: blue;
-    text-decoration: none;
-  }
-}
+//   &:hover {
+//     color: blue;
+//     text-decoration: none;
+//   }
+// }
 
 th {
   padding-bottom: 5px;
@@ -84,6 +84,9 @@ label {
 }
 
 .btn-circle {
+    position: absolute;
+    top: 35%;
+    right: 15px;
     width: 30px;
     height: 30px;
     padding: 6px 0px;

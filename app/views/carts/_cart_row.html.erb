@@ -7,11 +7,8 @@
       <%#= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
       <%= f.hidden_field :product_id, value: product.id %>
     </div>
-    <div class="text-center w-100">
-        <%#= f.submit "Update Quantity", class: "btn btn-primary" %>
-        <%= link_to "-", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger btn-circle" } %>
-    </div>
   </div>
+  <%= link_to "X", order_item, { data: { confirm: "Soll das Material '#{order_item.product.name}' wirklich entfernt werden?" }, method: :delete, remote: true, class: "btn btn-danger btn-circle font-weight-bold" } %>
   <!-- <h4 class="text-right">Total Price: <span style="color: green"> -->
     <%#= number_to_currency order_item.total_price %>
       

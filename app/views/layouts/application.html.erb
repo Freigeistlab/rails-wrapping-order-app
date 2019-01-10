@@ -19,12 +19,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <% if controller.controller_name == "carts" || controller.controller_name == "pages" %>
+  <%= render 'layouts/notifications' %>
+  <%# if controller.controller_name == "carts" || controller.controller_name == "pages" %>
+  <% if controller.controller_name == "pages" %>
   <article>
     <div class="container-fluid">
       <%= render 'layouts/welcome' if current_page?(root_url) %>
-      <%= render 'layouts/top_navigation' %>    
+      <%= render 'layouts/top_navigation' %>
       <div class="row">
         <div class="col-7">
           <div class="content-section">
@@ -41,9 +42,9 @@
     <%= render 'layouts/top_navigation' %>
     <div class="container">
       <div class="row">
-        <div class="col-xs-6">
-          <%= yield %>
-        </div>
+        
+        <%= yield %>
+        
       </div>
     </div>
   <% end %>

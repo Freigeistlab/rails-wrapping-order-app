@@ -21,6 +21,21 @@ class OrdersController < ApplicationController
   def edit
   end
 
+  def success
+  end
+
+  def place_order
+    @order = current_order
+    if @order.order_items.count < 1
+      flash[:alert] = "Es wurden noch keine Verpackungsmaterialien ausgewählt."
+    else
+      @order.order_status_id = 2
+      session.delete(:order_id)
+      redirect_to success_order_path
+      # flash[:success] = "Bestellung ist eingegangen und wird bearbeitet. Die Bestätigung bitte am Drucker abholen und den Anweisungen folgen."
+    end
+  end
+
   # POST /orders
   # POST /orders.json
   def create

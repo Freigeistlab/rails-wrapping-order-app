@@ -12,7 +12,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">
-            <%= link_to "#{current_order.order_items.size} Materialien ausgewählt ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>    
+            <%= current_order.order_items.size %> Materialien ausgewählt
           </h5>
           <p class="card-text">
             <% current_order.order_items.order(:product_group_id).each do |oi| %>
@@ -20,7 +20,13 @@
             <% end %>
           </p>
         </div>
+        <% if current_order.order_items.count > 0 %>
+          <%= button_to "Zur Bestellung", cart_path, :method => :get, :class => "btn btn-primary btn-lg mb-5" %>
+        <% end %>
       </div>
+
     </div>
+
+
   </div>
 </div>

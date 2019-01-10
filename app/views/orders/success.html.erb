@@ -1,0 +1,36 @@
+<div class="modal fade show" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Oder doch lieber ein Modal?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Also nach dem Abschicken der Bestellung auf die Startseite weiterleiten und das Modal mit der Erfolgsmeldung und den weiteren Schritten anzeigen. Was meint ihr?</p>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-primary">Ok</button> -->
+        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+          Ok
+        </button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h1 class="display-4">Bestellung erfolreich</h1>
+  <p class="lead">Bestellung ist eingegangen und wird bearbeitet. Die Bestätigung bitte am Drucker abholen und Teil 1 mit dem Geschenk abgeben und Teil 2 als Quittung behalten.</p>
+  <hr class="my-4">
+  <p>Bei Fragen einfach an den Mitarbeiter wenden.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/" role="button">Ok</a>
+  </p>
+</div>
+
+<script type="text/javascript">
+  $('.modal').modal('show')
+</script>
