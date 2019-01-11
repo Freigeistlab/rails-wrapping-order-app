@@ -5,25 +5,13 @@
   
   <%= f.input :description %>
   
-  <%= f.input :image, label: 'Image-URL eingeben', %>
-  </div>
+  <%= f.input :image, label: 'Image-URL eingeben' %>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
+  <%= f.input :price %>
 
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active %>
-  </div>
+  <%= f.input :active %>
+  
+  <%= f.association :product_group, label_method: :name, value_method: :id, include_blank: false %>
 
-  <div class="field">
-    <%= form.label :product_group_id %>
-    <%= form.text_field :product_group_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.button :submit, class: "btn-primary" %>
 <% end %>
