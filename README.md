@@ -1,24 +1,32 @@
-# README
+# ![Rails Christmas Wrapper App](project-logo.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Rails App for a Christmas Wrapping Order Interface
 
-Things you may want to cover:
+# Getting started
 
-* Ruby version
+To get the Rails server running locally:
 
-* System dependencies
+- Clone this repo
+- `bundle install` to install all dependencies
+- `rake db:migrate` to make all database migrations
+- `rails s` to start the local server
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+# Code Overview
 
-* How to run the test suite
+## Dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+- [Rails](https://rubyonrails.org/) - Server-side web application framework
+- [Rails installation help](https://gorails.com/setup/) - Guide to setting up a Ruby on Rails development environment
+- [Devise](https://github.com/plataformatec/devise) - For Authentication
+- [Simple Form](https://github.com/plataformatec/simple_form) - Rails forms made easy
+- [Bootstrap](https://getbootstrap.com/) - Front-end framework
 
-* Deployment instructions
+## Structure
 
-* ...
+- `app/models` - Contains the database models for the application where we can define methods, validations, queries, and relations to other models.
+- `app/views` - Contains templates for generating the JSON output for the API
+- `app/controllers` - Contains the controllers where requests are routed to their actions, where we find and manipulate our models and return them for the views to render.
+- `config` - Contains configuration files for our Rails application and for our database, along with an `initializers` folder for scripts that get run on boot.
+- `db` - Contains the migrations needed to create our database schema.
