@@ -1,29 +1,11 @@
-<%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<%= simple_form_for @product do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_area :image %>
+  <%= f.input :name %>
+  
+  <%= f.input :description %>
+  
+  <%= f.input :image, label: 'Image-URL eingeben', %>
   </div>
 
   <div class="field">
