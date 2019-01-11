@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :admins
   resources :order_items
   resources :orders
   get '/place_order', to: 'orders#place_order', as: 'place_order'

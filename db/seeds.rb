@@ -23,4 +23,4 @@ Product.find_or_create_by(id: 8, name: "Karte Weihnachtsmann", description: "sch
 OrderStatus.find_or_create_by(id: 1, name: "In Bearbeitung") 
 OrderStatus.find_or_create_by(id: 2, name: "Bestätigt") 
 OrderStatus.find_or_create_by(id: 3, name: "Fertig") 
-OrderStatus.find_or_create_by(id: 4, name: "Cancelled") 
+OrderStatus.find_or_create_by(id: 4, name: "Cancelled")
