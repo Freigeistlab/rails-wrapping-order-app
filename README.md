@@ -1,6 +1,6 @@
-# ![Rails Christmas Wrapper App](project-logo.png)
+# ![Rails (Christmas) Wrapping Order App](project-logo.png)
 
-> Rails App for a Christmas Wrapping Order Interface
+> Rails App for a (Christmas) Wrapping Order Interface
 
 # Getting started
 
