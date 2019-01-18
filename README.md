@@ -8,6 +8,7 @@ To get the Rails server running locally:
 
 - Clone this repo
 - `bundle install` to install all dependencies
+- `rake db:create` to create the default database
 - `rake db:migrate` to make all database migrations
 - `rails s` to start the local server
 
