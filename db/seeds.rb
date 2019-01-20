@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-pg1 = ProductGroup.find_or_create_by(id: 1, name: "Verpakungsstil", active: true, order: 1) 
+pg1 = ProductGroup.find_or_create_by(id: 1, name: "Verpackungsstil", active: true, order: 1) 
 pg2 = ProductGroup.find_or_create_by(id: 2, name: "Geschenkpapier", active: true, order: 2) 
 pg3 = ProductGroup.find_or_create_by(id: 3, name: "Band", active: true, order: 3) 
 pg4 = ProductGroup.find_or_create_by(id: 4, name: "Karte", active: true, order: 4) 

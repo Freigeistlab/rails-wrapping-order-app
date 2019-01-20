@@ -92,12 +92,15 @@ class OrdersController < ApplicationController
 
     def send_order_as_post_request
 
-      uri = URI('localhost')
-      req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
-      req.body = {param1: 'some value', param2: 'some other value'}.to_json
-      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
-        http.request(req)
-      end
+      uri = URI.parse('http://localhost:5000/order')
+      http = Net::HTTP.new(uri.host, uri.port)
+      request = Net::HTTP::Post.new(uri.request_uri)
+      request.body = {id: 1, order_products: {"paper": "test"}}.to_json
+
+      # Tweak headers, removing this will default to application/x-www-form-urlencoded
+      request["Content-Type"] = "application/json"
+
+      res = http.request(request)
 
       case res
       when Net::HTTPSuccess, Net::HTTPRedirection
