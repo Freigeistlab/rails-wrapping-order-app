@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  require 'net/http'
+
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -23,7 +25,7 @@ class OrdersController < ApplicationController
 
   def success
   end
-
+ 
   def place_order
     @order = current_order
     if @order.order_items.count < 1
@@ -31,6 +33,7 @@ class OrdersController < ApplicationController
     else
       @order.order_status_id = 2
       session.delete(:order_id)
+      send_order_as_post_request
       redirect_to success_order_path
       # flash[:success] = "Bestellung ist eingegangen und wird bearbeitet. Die Bestätigung bitte am Drucker abholen und den Anweisungen folgen."
     end
@@ -85,5 +88,22 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:subtotal, :tax, :shipping, :total, :order_status_id)
+    end
+
+    def send_order_as_post_request
+
+      uri = URI('localhost')
+      req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
+      req.body = {param1: 'some value', param2: 'some other value'}.to_json
+      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+        http.request(req)
+      end
+
+      case res
+      when Net::HTTPSuccess, Net::HTTPRedirection
+        logger.info "success posted"
+      else
+        res.value
+      end
     end
 end
