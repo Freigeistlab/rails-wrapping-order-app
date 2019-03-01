@@ -77,8 +77,5 @@ ActiveRecord::Schema.define(version: 2019_01_11_103207) do
     t.index ["product_group_id"], name: "index_products_on_product_group_id"
   end
 
-  add_foreign_key "order_items", "orders"
-  add_foreign_key "order_items", "products"
-  add_foreign_key "orders", "order_statuses"
   add_foreign_key "products", "product_groups"
 end
